@@ -1,12 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Context } from './context';
+import { store } from './store';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//const newStore = store();
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+class ProviderComp extends React.Component{
+    state = {
+        'products': [],
+        set: (object, val) => {
+            this.setState({[object]: val})
+        },
+        'store': store()
+    }
+
+    componentDidUpdate(){
+        console.log('state update', this.state);
+    }
+
+    render(){
+        return(
+            <Context.Provider value={this.state}>
+                <App></App>
+            </Context.Provider>
+        )
+    }
+}
+
+ReactDOM.render(
+    <ProviderComp></ProviderComp>, 
+    document.getElementById('root')
+    );
+
+module.hot.accept();
+
+/*     return(
+    <Context.Provider value={ {
+        providerState: this.state,
+        store: newStore } }>
+        <App></App>
+    </Context.Provider>
+    )
+    */
