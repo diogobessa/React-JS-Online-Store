@@ -30,7 +30,6 @@ class Product extends Component{
             this.setState({
                 loading: false
             })
-            console.log('tpmp', this.props.match);
             return product._id === this.props.match.params.id
         });
 
@@ -47,11 +46,7 @@ class Product extends Component{
     }
 
     handleScroll = (event) => {
-        console.log('window scrollY', window.scrollY);
-        console.log('window pageYOffset', window.pageYOffset);
-        console.log(this.refs['productInfo']);
         let productInfoRect = ReactDOM.findDOMNode(this.refs['productInfo']).getBoundingClientRect();
-        console.log('info rect', productInfoRect);
         if(productInfoRect.top <= 1020){
             this.setState({
                 'fixedInfoContainer': true,
@@ -117,7 +112,7 @@ class Product extends Component{
         });
 
      
-        console.log('container width', this.state.widthInfoContainer);
+        //console.log('container width', this.state.widthInfoContainer);
         return(
             <Container>
                 <Columns>
