@@ -1,0 +1,12 @@
+.priceTag{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding:8px 0;
+    font-size: 12px;
+    text-align: left;
+}
+
+.priceTag.cardPrice{
+    text-align: center;
+    font-size:30px;
+}

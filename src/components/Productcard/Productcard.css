@@ -1,0 +1,16 @@
+.productCard{
+    background-color:#F5F5F5;
+}
+
+a.productCardLink, a.productCardLink:hover, a.productCardLink:active, a.productCardLink:visited{
+    color:#000;
+}
+figure{
+    text-align:center;
+}
+figcaption p{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding:8px 0 !important;
+    font-size: 12px !important;
+}

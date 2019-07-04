@@ -1,0 +1,11 @@
+.productInfo{
+    position: relative;
+}
+
+h1{font-size:30px;}
+
+
+.fixed{
+    position: fixed; 
+    top:100px;
+}
