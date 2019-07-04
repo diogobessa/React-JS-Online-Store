@@ -71,7 +71,7 @@ class Product extends Component{
            <p>product info..</p> 
         )
     }
-    
+
     // TODO Reduzir o numero de IF's na funão onAddToBag
     onAddToBag = () => {
         let cartData = this.context.cart;
@@ -149,54 +149,3 @@ class Product extends Component{
 
 Product.contextType = Context;
 export default Product;
-
-
-/*
-
-            <Columns>
-                <Columns.Column size="two-thirds">
-                    <div className="bg">image</div>
-                </Columns.Column>
-                <Columns.Column size="one-third">
-                    <div className="bg">
-                        <h1>{this.state.product.title}</h1>
-                        <p>{getPrice(this.state.product.price)}</p>
-                        <Form.Select name="size">
-                            <option value="" disabled selected>Select size</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                        </Form.Select>
-                        <Button onClick={this.check}>Add to Bag</Button>
-                    </div>
-                </Columns.Column>
-            </Columns>
-
-*/
-
-/*
-
-
-    onAddToBag = () => {
-        let cartData = this.context.cart;
-        if(this.state.selectedSize){
-            const foundItem = cartData.find((el, index) => {
-                const cartItemIndex = index;
-                return el.item === this.state.selectedSize
-            });
-            if(!foundItem){
-                cartData.push({
-                    item: this.state.selectedSize,
-                    quantity: 1
-                });
-                this.context.set('cart', cartData);
-            }else{
-                console.log('found indeeeex', cartItemIndex);
-                foundItem.set('quantity', cartData.quantity++);
-            }
-            console.log(cartData);
-            console.log(this.context.cart);
-        }
-    }
-
-    */

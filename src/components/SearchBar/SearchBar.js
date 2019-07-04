@@ -14,17 +14,13 @@ class SearchBar extends Component{
     }
 
     componentDidMount(){
-        console.log('searchbar props', this.props);
     }
 
     handleChange = event => {
-        console.log('evt target value', event.target.value);
-        console.log('state search', this.state.search);
         this.setState({'search': event.target.value});
     }
 
     keyPressed = event => {
-        console.log('pressed', event.key);
         if(event.key === "Enter"){
             console.log('pressed enter.... confirmed');
             this.props.onChangeHistory(this.state.search);

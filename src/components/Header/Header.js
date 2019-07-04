@@ -5,7 +5,7 @@ import './Header.css';
 import { cartTotal } from '../../services/functions';
 import { SearchBar } from '../../components';
 import { Container, Navbar } from 'react-bulma-components/full';
-/* Section, Container, Columns */
+
 class Header extends Component{
 
     constructor(props){
@@ -78,18 +78,3 @@ class Header extends Component{
 }
 Header.contextType = Context;
 export default Header;
-
-/*
-
-    <header>
-                <Section>
-                    <Container>
-                        <Columns>
-                        <Columns.Column size="two-thirds">Logo + menu</Columns.Column>
-                        <Columns.Column size="one-third">Carrinho</Columns.Column>
-                        </Columns>
-                    </Container>
-                </Section>
-            </header>
-
-            */

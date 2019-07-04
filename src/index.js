@@ -35,12 +35,3 @@ ReactDOM.render(
 );
 
 //module.hot.accept();
-
-/*     return(
-    <Context.Provider value={ {
-        providerState: this.state,
-        store: newStore } }>
-        <App></App>
-    </Context.Provider>
-    )
-    */

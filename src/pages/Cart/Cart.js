@@ -3,6 +3,7 @@ import { CartListing } from '../../components';
 import { Columns, Button, Container } from 'react-bulma-components/full';
 import { cartTotal } from '../../services/functions';
 
+// TODO Add Localstorage before Context
 /*
 
     1. Check LocalStorage
