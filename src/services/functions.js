@@ -1,17 +1,33 @@
-import axios from 'axios';
 import { configData } from '../config';
 
-console.log('configData', configData);
+const getPrice = (price) => {
+  return (price/100).toLocaleString('en-EN', { style: 'currency', currency: 'EUR' });;
+}
 
-const getProducts = (callback) => {
-    axios.get('http://localhost:3001/api/getProducts', {})
-      .then((response) => {
-        //console.log('response.data',response.data);
-        return callback(response.data);
-        //this.setState({ products: response.data });
-      })
-  }
+const returnFeaturedImage = (imgs) => {
+  const featuredImage = imgs.find( (img) => {
+      return img.featured === true;
+  });
+  return featuredImage.url;
+}
+
+const convertToTimeStamp = (strDate) => {
+  const stamp = Date.parse(strDate);
+  return stamp/1000;
+}
+
+const cartTotal = (itemsOnCart) => {
+  let cartValue = 0;
+  itemsOnCart.forEach( (i) => {
+    cartValue += (i.price*i.quantity)
+  });
+  console.log('cart', cartValue);
+  return (getPrice(cartValue));
+}
 
 export {
-    getProducts
+    getPrice,
+    returnFeaturedImage,
+    convertToTimeStamp,
+    cartTotal
 }

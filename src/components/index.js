@@ -1,3 +1,9 @@
-import Header from './Header';
-
-export default Header;
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';
+export { default as Productcard } from './Productcard';
+export { default as CartListing } from './CartListing';
+export { default as SearchBar } from './SearchBar';
+export { default as Image } from './Image';
+export { default as Title } from './Title';
+export { default as Price } from './Price';
+export { default as Gallery } from './Gallery';
